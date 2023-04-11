@@ -77,10 +77,25 @@ namespace csharp_biblioteca
 
             Bibilioteca MyBiblioteca= new Bibilioteca("Biblioteca Comunale Delfini", "Corso Canalgrande, 103, 41121 Modena MO", Utenti,Documenti,Prestiti);
 
-
-
-
-
+            Console.WriteLine("UTENTI IN BIBLIOTECA:::::::::::::::::::::::::::::");
+            foreach (var utente in MyBiblioteca.Utenti)
+            {
+                Console.WriteLine(utente.getUser);
+            }
+            Console.WriteLine("DOCUMENTI IN BIBLIOTECA:::::::::::::::::::::::::::");
+            foreach (var Doc in MyBiblioteca.Documenti)
+            {
+                Console.WriteLine(Doc.titolo);
+            }
+            Console.WriteLine("PRESTITI IN BIBLIOTECA:::::::::::::::::::::::::::");
+            foreach (var prestito in MyBiblioteca.Prestiti)
+            {
+                Console.WriteLine(prestito.Utente + " HA PRESO:");
+                foreach(var doc in prestito.Documenti)
+                {
+                    Console.WriteLine(doc.titolo);
+                }
+            }
 
 
 
